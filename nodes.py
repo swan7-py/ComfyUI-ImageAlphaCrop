@@ -33,7 +33,7 @@ class ImageAlphaCrop:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("cropped_images",)
     FUNCTION = "crop_alpha"
-    CATEGORY = "image/processing"
+    CATEGORY = "Swan"
     DESCRIPTION = "根据Alpha通道自动裁剪图像的透明边框，输出带Alpha通道的图像"
 
     def crop_alpha(self, images, padding=0, alpha_threshold=0.01):
@@ -148,7 +148,7 @@ class ImageAlphaCropAdvanced:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("cropped_images",)
     FUNCTION = "crop_alpha_advanced"
-    CATEGORY = "image/processing"
+    CATEGORY = "Swan"
     DESCRIPTION = "高级Alpha通道裁剪，支持保持宽高比和调整尺寸"
 
     def crop_alpha_advanced(self, images, padding=0, alpha_threshold=0.01, 
@@ -266,7 +266,7 @@ class ImageAddAlphaChannel:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("images_with_alpha",)
     FUNCTION = "add_alpha"
-    CATEGORY = "image/processing"
+    CATEGORY = "Swan
     DESCRIPTION = "为RGB图像添加Alpha通道"
 
     def add_alpha(self, images, alpha_value=1.0):
@@ -287,4 +287,5 @@ class ImageAddAlphaChannel:
             rgb_images = images.repeat(1, 1, 1, 3) if channels == 1 else images[:, :, :, :3]
             images_with_alpha = torch.cat([rgb_images, alpha], dim=3)
         
+
         return (images_with_alpha,)
