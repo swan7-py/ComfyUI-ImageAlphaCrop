@@ -1,6 +1,6 @@
 [project]
 name = "ComfyUI-ImageAlphaCrop"
-description = "ComfyUI plugin for automatically cropping transparent alpha channel borders from images - ideal for processing logos and icons. Supports batch processing with adjustable padding and alpha threshold. (Description by CC)"
+description = "ComfyUI的插件，提供透明图像边缘裁切功能，RGBA格式图像读取与保存"
 version = "1.0.1"
 license = {file = "LICENSE"} 
 
